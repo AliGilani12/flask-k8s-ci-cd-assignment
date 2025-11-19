@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -23,10 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run flake8 linting
+      - name: Run flake8
         run: flake8 --max-line-length=90
 
-      - name: Run pytest unit tests
+      - name: Run pytest
         run: pytest
 
       - name: Build Docker image
